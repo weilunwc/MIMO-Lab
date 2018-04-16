@@ -49,3 +49,11 @@ fprintf('The mu for RP using ncfsyn is: %f\n',mu_perfINFLOOP);
 % plot(simcontrol.time,simcontrol.signals.values);
 % title('Control usage using ncfsyn controller');
 %
+
+% Save example controller
+if	exist('Controller.mat', 'file')
+	save('Controller.mat', 'K_INFLOOP', '-append');
+else
+	save('Controller.mat', 'K_INFLOOP');
+end
+

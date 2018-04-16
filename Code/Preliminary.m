@@ -58,6 +58,18 @@ Del_I=[Delta_1,0;0,Delta_2];
 % Save the important variables
 save('Variables.mat', 'WI', 'W_I_Pitch', 'W_I_Yaw', 'Delta_1', 'Delta_2', 'Del_I', 'Gnom', 'Gunc', 'Gunc_mult', 's');
 
+% Example controller
+K_example=[(1711*s+4910)/(s+50),(-1557*s-5153)/(s+50);
+           (2432*s+7817)/(s+50),(921.5*s+3308)/(s+50)];
+
+% Save example controller
+if	exist('Controller.mat', 'file')
+	save('Controller.mat', 'K_example', '-append');
+else
+	save('Controller.mat', 'K_example');
+end
+
+
 
 
 

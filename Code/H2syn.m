@@ -54,3 +54,13 @@ title('Output using H2syn controller');
 figure;
 plot(simcontrol.time,simcontrol.signals.values);
 title('Control usage using H2syn controller');
+
+
+% Save example controller
+if	exist('Controller.mat', 'file')
+	save('Controller.mat', 'K_2', '-append');
+else
+	save('Controller.mat', 'K_2');
+end
+
+

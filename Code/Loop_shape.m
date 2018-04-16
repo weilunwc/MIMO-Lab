@@ -8,7 +8,7 @@ fprintf('Inverse Based Controller Loop Shaping\n');
 fprintf('=================================================\n');
 
 % Tune crossover frequency to see good repsonse on control usage 
-wc = 5;
+wc = 4;
 
 % Performance weight
 W_p=makeweight(100,wc,1/3);
@@ -53,7 +53,10 @@ figure;
 plot(simcontrol.time,simcontrol.signals.values);
 title('Control usage using loopsyn controller');
 
-
-
+if	exist('Controller.mat', 'file')
+	save('Controller.mat', 'K_inv', '-append');
+else
+	save('Controller.mat', 'K_inv');
+end
 
 

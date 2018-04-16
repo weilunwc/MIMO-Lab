@@ -45,3 +45,17 @@ title('Output using LQG controller');
 figure;
 plot(simcontrol.time,simcontrol.signals.values);
 title('Control usage using LQG controller');
+
+% Save example controller
+if	exist('Controller.mat', 'file')
+	save('Controller.mat', 'K_LQG', '-append');
+else
+	save('Controller.mat', 'K_LQG');
+end
+
+
+
+
+
+
+
