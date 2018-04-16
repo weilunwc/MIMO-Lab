@@ -126,7 +126,8 @@ title('Output using LQG controller');
 figure;
 plot(simcontrol.time,simcontrol.signals.values);
 title('Control usage using LQG controller');
-%% H2Syn
+
+% H2Syn
 fprintf('H2syn Controller\n');
 fprintf('=================================================\n');
 % Divide performance weight by large pole ot make it proper. H2syn does not
@@ -167,6 +168,9 @@ title('Output using H2syn controller');
 figure;
 plot(simcontrol.time,simcontrol.signals.values);
 title('Control usage using H2syn controller');
+
+
+
 %% H-inf
 fprintf('H-inf Controller\n');
 fprintf('=================================================\n');
